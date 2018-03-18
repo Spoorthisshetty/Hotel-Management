@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Affordable and high quality dishes">
+	<meta name="keywords" content="Indian,Italian,Chinese,Mexican">
+	<meta name="author" content="Spoorthi">
+	<title>DineRoom|Home</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="branding">
+			<h1><span class="highlight">Dine </span>Room</h1>
+			</div>
+			
+			<nav>
+			<ul>
+				<li class="current"><a  href="index2.html">Home</a></li>
+				<li><a  href="index3.html">About</a></li>
+				<li><a  href="login1.html">Login</a></li>
+				<li><a  href="kitchen.html">Kitchen</a></li>
+			</ul>
+		
+	</nav>
+	</div>
+	</header>
+
+	<div class="wrap">
+		<div id="arrow-left" class="arrow"></div>
+		<div id="slider">
+			<div class="slide slide1">
+			
+				<div class="slide-content">
+					<span>Good food choices are good investments.</span>
+				</div>
+			</div>
+			<div class="slide slide2">
+				
+					<div class="slide-content">
+						<span>Food is an important part of a balanced diet.</span>
+					</div>
+				</div>
+			<div class="slide slide3">	
+				<div class="slide-content">
+					<span>People who love to eat are always the best people.</span>
+				</div>
+			</div>
+			<div class="slide slide4">
+			
+					<div class="slide-content">
+						<span>Laughter is brightest in the place where the food is.</span>
+					</div>
+				</div>
+		</div>
+		<div id="arrow-right" class="arrow"></div>
+
+	</div>
+<!--
+	<section id="showcase">
+		<div class="container">
+			<h2>Your diet is a bank account. Good food choices are good investments.
+			</h2>
+			
+		</div>
+	</section>
+-->
+	<section id="boxes">
+		<div class="container">
+			<div class="box">
+				<img src="./images/indian2.jpeg">
+				<h1>Indian cusine</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="box">
+				<img src="./images/chinese.jpeg">
+				<h1>Chinese </h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="box">
+				<img src="./images/italian.jpeg">
+				<h1>Italian </h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="box">
+				<img src="./images/mexican.jpeg">
+				<h1>Mexican</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="box">
+				<img src="./images/american.jpeg">
+				<h1>American</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="box">
+				<img src="./images/french.jpeg">
+				<h1>French</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+
+
+		</div>
+	</section>
+
+	
+
+	<footer id="main-footer">
+		<p>Copyright &copy;2018 Dine Room</p>
+
+	<script>
+	let slideImages=document.querySelectorAll('.slide'),// to select many images
+		arrowLeft=document.querySelector('#arrow-left'),//to select one image
+		arrowRight=document.querySelector('#arrow-right'),
+		current=0;
+	//clears all images
+	function reset(){
+		for(let i=0;i<slideImages.length;i++)
+		{
+			slideImages[i].style.display='none'; // hides the other images
+		}
+	}
+		//initializes slide
+	function startSlide()
+	{
+		reset();
+		slideImages[0].style.display='block'; //this displays the first image
+	}
+
+	function slideLeft(){
+
+		reset();
+		slideImages[current-1].style.display='block'; //on left click moves to the image with index less than current by 1
+		current--;
+	}
+
+	function slideRight(){
+		reset();
+		slideImages[current+1].style.display='block';//moves to the next image 
+		current++;
+	}
+
+	//left arrow click event listener
+	arrowLeft.addEventListener('click',function(){
+		if(current===0) // if its in the first slide on click move to the last slide
+		{
+			current=slideImages.length;
+		}
+		slideLeft();
+	});
+
+	//right arrow click event listener
+	arrowRight.addEventListener('click',function(){
+		if(current===slideImages.length-1) //if its in the last image then move to the first image
+		{
+			current=-1
+
+		}
+		slideRight();
+	});
+
+
+	startSlide();
+	
+	</script>
+
+</body>
+</html>
